@@ -6,10 +6,20 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Load OS specific configuration
-# Load aliases
+if [ -f ~/.dotfiles/.bash_profile_$OSTYPE ]
+then
+  . ~/.dotfiles/.bash_profile_$OSTYPE
+fi
+
 if [ -f ~/.dotfiles/.bashrc_$OSTYPE ]
 then
   . ~/.dotfiles/.bashrc_$OSTYPE
+fi
+
+# Load aliases
+if [ -f ~/.dotfiles/.aliases_$OSTYPE ]
+then
+  . ~/.dotfiles/.aliases_$OSTYPE
 fi
 
 # User specific environment
