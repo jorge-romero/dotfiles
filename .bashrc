@@ -2,13 +2,20 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+  . /etc/bashrc
+fi
+
+# Load OS specific configuration
+# Load aliases
+if [ -f ~/.dotfiles/.bashrc_$OSTYPE ]
+then
+  . ~/.dotfiles/.bashrc_$OSTYPE
 fi
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+  PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
 
@@ -22,7 +29,9 @@ if [ -f `which powerline-daemon` ]; then
   POWERLINE_BASH_SELECT=1
   . /usr/share/powerline/bash/powerline.sh
 fi
+
+# Load aliases
 if [ -f ~/.aliases ]
 then
-	. ~/.aliases
+  . ~/.aliases
 fi
