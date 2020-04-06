@@ -26,10 +26,7 @@ set foldmethod=indent   " fold based on indent level
 noremap <space> za
 
 " Tab navigation like Firefox.
-noremap <C-S-tab> :tabprevious<CR>
-noremap <C-tab>   :tabnext<CR>
+noremap <C-h> :tabprevious<CR>
+noremap <C-l>   :tabnext<CR>
 noremap <C-t>     :tabnew<CR>
-noremap <C-S-tab> <Esc>:tabprevious<CR>i
-noremap <C-tab>   <Esc>:tabnext<CR>i
-noremap <C-t>     <Esc>:tabnew<CR>
 
