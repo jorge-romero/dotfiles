@@ -2,11 +2,14 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
-call plug#begin("~/.vim/plugged")
-  " Theme
-  Plug 'dracula/vim'
 
-  " Language Client
+call plug#begin("~/.vim/plugged")
+
+  " Status line
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes' 
+
+  "" Language Client
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
   " TypeScript Highlighting
@@ -18,9 +21,17 @@ call plug#begin("~/.vim/plugged")
   Plug 'scrooloose/nerdtree'
   Plug 'ryanoasis/vim-devicons'
 
-  " File Search
+  "" File Search
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+
+  "" Git extension
+  Plug 'airblade/vim-gitgutter', {'on': 'GitGutterEnable'}
+
+  "" Markdown
+  Plug 'godlygeek/tabular'
+  Plug 'plasticboy/vim-markdown'
+
 call plug#end()
 
 " Enable theming support
@@ -29,16 +40,7 @@ if (has("termguicolors"))
 endif
 
 " Theme
-syntax enable
-
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = ''
-" Automaticaly close nvim if NERDTree is only thing left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Toggle
-nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+"syntax enable
 
 nnoremap <C-p> :FZF<CR>
 let g:fzf_action = {
@@ -77,3 +79,6 @@ function! OpenTerminal()
   resize 10
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
+
+" Start NERTTreee on vim startup
+autocmd vimenter * NERDTree
