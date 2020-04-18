@@ -47,3 +47,10 @@ then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Fix del key in simple terminal
+tput smkx
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/biterchus/.sdkman"
+[[ -s "/home/biterchus/.sdkman/bin/sdkman-init.sh" ]] && source "/home/biterchus/.sdkman/bin/sdkman-init.sh"
