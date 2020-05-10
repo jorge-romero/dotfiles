@@ -25,7 +25,7 @@ fi
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
-  PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+  PATH="$HOME/.local/bin/statusbar:$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
 
@@ -45,5 +45,12 @@ if [ -f ~/.aliases ]
 then
   . ~/.aliases
 fi
-
+# Fuzzy search of files
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Fix del key in simple terminal
+tput smkx
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/biterchus/.sdkman"
+[[ -s "/home/biterchus/.sdkman/bin/sdkman-init.sh" ]] && source "/home/biterchus/.sdkman/bin/sdkman-init.sh"

@@ -100,3 +100,10 @@ source $ZSH/oh-my-zsh.sh
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Fix del key in SimpleTerminal
+tput smkx
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/biterchus/.sdkman"
+[[ -s "/home/biterchus/.sdkman/bin/sdkman-init.sh" ]] && source "/home/biterchus/.sdkman/bin/sdkman-init.sh"

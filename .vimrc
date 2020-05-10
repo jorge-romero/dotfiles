@@ -25,8 +25,57 @@ set foldmethod=indent   " fold based on indent level
 " space open/closes folds
 noremap <space> za
 
-" Tab navigation like Firefox.
+" Tab navigation.
 noremap <C-h> :tabprevious<CR>
-noremap <C-l>   :tabnext<CR>
-noremap <C-t>     :tabnew<CR>
+noremap <C-l> :tabnext<CR>
+noremap <C-t> :tabnew<CR>
+
+   
+call plug#begin("~/.vim/plugged")
+  Plug 'tomasr/molokai'
+
+  " Status line
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes' 
+
+  "" Language Client
+  "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+  "" TypeScript Highlighting
+  "Plug 'leafgarland/typescript-vim'
+  "Plug 'peitalin/vim-jsx-typescript'
+
+
+  " File Explorer with Icons
+  Plug 'scrooloose/nerdtree'
+  Plug 'ryanoasis/vim-devicons'
+
+  "" File Search
+  "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  "Plug 'junegunn/fzf.vim'
+
+  "" Git extension
+  Plug 'airblade/vim-gitgutter', {'on': 'GitGutterEnable'}
+
+  "" Markdown
+  "Plug 'godlygeek/tabular'
+  "Plug 'plasticboy/vim-markdown'
+
+call plug#end()
+" Molokai configuration
+   colors molokai
+   let g:molokai_original = 1
+
+" NERDTree configuration
+
+   let g:NERDTreeShowHidden = 1
+   let g:NERDTreeMinimalUI = 1
+   let g:NERDTreeIgnore = []
+   let g:NERDTreeStatusline = ''
+   
+   " Automaticaly close nvim if NERDTree is only thing left open
+   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+   
+   nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+
 
