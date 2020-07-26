@@ -1,5 +1,5 @@
 " Global configuration
-set number
+set relativenumber
 syntax on
 set cursorline          " highlight current line
 set wildmenu 	        " visual autocomplete for command menu
@@ -29,15 +29,16 @@ noremap <space> za
 noremap <C-h> :tabprevious<CR>
 noremap <C-l> :tabnext<CR>
 noremap <C-t> :tabnew<CR>
-
    
 call plug#begin("~/.vim/plugged")
+  Plug 'suan/vim-instant-markdown', {'for':'markdown'}  "Display markdown automatically, need to install the miniserver
   Plug 'tomasr/molokai'
 
   " Status line
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes' 
 
+  Plug 'ap/vim-css-color'
   "" Language Client
   "Plug 'neoclide/coc.nvim', {'branch': 'release'}
   "let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
@@ -62,12 +63,12 @@ call plug#begin("~/.vim/plugged")
   "Plug 'plasticboy/vim-markdown'
 
 call plug#end()
+
 " Molokai configuration
    colors molokai
    let g:molokai_original = 1
-
+ 
 " NERDTree configuration
-
    let g:NERDTreeShowHidden = 1
    let g:NERDTreeMinimalUI = 1
    let g:NERDTreeIgnore = []
@@ -78,4 +79,10 @@ call plug#end()
    
    nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
-
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Instant Markdown
+" """""""""""""""""""""""""""""""""""""""""""""
+let g:instant_markdown_autostart = 0         " Turns off auto preview 
+let g:instant_markdown_browser = "surf"   " Uses surf for preview 
+map <Leader>md :InstantMarkdownPreview<CR>   " Previews .md file 
+map <Leader>ms :InstantMarkdownStop<CR>      " Kills the preview
