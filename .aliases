@@ -19,4 +19,6 @@ alias ..='cd ..'
 alias ...='cd ..\..'
 alias ....='cd ..\..\..'
 
-alias cdjr='cd /home/$USER/src/github.com/jr/'
+alias cdjr='cd $HOME/src/github.com/jr/'
+alias cdgh='cd $HOME/src/github.com/'
+alias cdweb='cd $HOME/src/github.com/jr/bitertech-website'

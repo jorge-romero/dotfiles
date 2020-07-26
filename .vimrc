@@ -1,5 +1,5 @@
 " Global configuration
-set number
+set relativenumber
 syntax on
 set cursorline          " highlight current line
 set wildmenu 	        " visual autocomplete for command menu

@@ -29,8 +29,12 @@ call plug#begin("~/.vim/plugged")
   Plug 'airblade/vim-gitgutter', {'on': 'GitGutterEnable'}
 
   "" Markdown
+  Plug 'suan/vim-instant-markdown', {'rtp': 'after'} " Markdown Preview
   Plug 'godlygeek/tabular'
-  Plug 'plasticboy/vim-markdown'
+
+  Plug 'frazrepo/vim-rainbow' "Colorize the parenthesis
+
+
 
 call plug#end()
 
