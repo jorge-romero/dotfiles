@@ -29,14 +29,17 @@ call plug#begin("~/.vim/plugged")
   Plug 'airblade/vim-gitgutter', {'on': 'GitGutterEnable'}
 
   "" Markdown
+  Plug 'godlygeek/tabular'
+  Plug 'plasticboy/vim-markdown'
   Plug 'suan/vim-instant-markdown', {'rtp': 'after'} " Markdown Preview
   Plug 'godlygeek/tabular'
-
+  
+  ""Colorize the parenthesis
   Plug 'frazrepo/vim-rainbow' "Colorize the parenthesis
 
-
-
 call plug#end()
+
+
 
 " Enable theming support
 if (has("termguicolors"))
