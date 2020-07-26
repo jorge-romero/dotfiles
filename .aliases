@@ -7,7 +7,8 @@ alias ls='colorls --group-directories-first'
 alias l='colorls -ltr'
 
 # Useful tools
-alias r=ranger
+alias r='. ranger'
+alias ranger='. ranger'
 
 # Change directories
 alias cd..='cd ..'
@@ -19,3 +20,7 @@ alias ...='cd ..\..'
 alias ....='cd ..\..\..'
 
 alias cdjrsrc='cd /home/$USER/src/github.com/jorge-romero/'
+alias cdjrsrc='cd $HOME/src/github.com/jorge-romero/'
+alias cdjr='cd $HOME/src/github.com/jr/'
+alias cdgh='cd $HOME/src/github.com/'
+alias cdweb='cd $HOME/src/github.com/jr/bitertech-website'
