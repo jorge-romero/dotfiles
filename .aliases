@@ -12,12 +12,12 @@ alias ranger='. ranger'
 
 # Change directories
 alias cd..='cd ..'
-alias cd...='cd ..\..'
-alias cd....='cd ..\..\..'
+alias cd...='cd ../..'
+alias cd....='cd ../../..'
 
 alias ..='cd ..'
-alias ...='cd ..\..'
-alias ....='cd ..\..\..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 alias cdjrsrc='cd /home/$USER/src/github.com/jorge-romero/'
 alias cdjrsrc='cd $HOME/src/github.com/jorge-romero/'
